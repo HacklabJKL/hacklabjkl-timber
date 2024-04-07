@@ -6,7 +6,7 @@ For more background on the site technology during big revamp in 2021 refer to bl
 
 # WP layout technology reconsiderations for 2024
 
-This repository is mostly empty because the layout is produced by a wysiwyg "site builder" storing it's configuration to database in traditional "CMS" way of doing HTML easily, which is not very GIT- or developer friendly way which is praicing for "configuration-as-code" and other methodologies that picked up steam long after WordPress was made. 
+This repository is mostly empty because the layout is produced by a wysiwyg "site builder" storing it's configuration to database in traditional "CMS" way of doing HTML easily. This is not very GIT or developer friendly way which is praicing for configuration-as-code methodology and tools like templating engines, ORM's or MVC-architecture that picked up steam in the web only after WordPress was made. 
 
 A GIT/developer friendly layout framework https://timber.github.io/docs/v2/ is currently being considered, which gives more developer oriented workflow for PHP web development involving WordPress as the backend.
 
