@@ -21,8 +21,4 @@ There is also a old issue tracker online as this repository was made by accident
 
 # Development environment
 
-Vagrant development environment with live site sync scripts and some documentation is provided at https://github.com/HacklabJKL/VVV. VVV is long running project and has nearly everything required for development while it can seem a bit heavy and monolithic (and more tied to AMD64). It's still a very active open source project with developers keeping it up to date and responding to guestions in support channels.
-
-Maximum beginners can also leverage https://localwp.com/ for nearly same effect but need to modify sync scripts written for VVV (not very hard).
-
-Container users can try out eg. WP-ENV (docker wrapper utility in NPM) https://developer.wordpress.org/block-editor/getting-started/devenv/get-started-with-wp-env/ but lacks features compared to VVV and adds some complexity of it's own for doing basic things. 
+Vagrant development environment with [live site sync script](https://github.com/HacklabJKL/VVV/blob/develop/pull-production.sh) and some documentation is provided at https://github.com/HacklabJKL/VVV. 
