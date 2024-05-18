@@ -1,24 +1,38 @@
-# Hacklab Jyväskylä web site development repository
+# The Timber Starter Theme
 
-Website (2021 remake) is currently built on a popular and relatively light [GeneratePress base theme](https://generatepress.com/) (GPLv3) using the "Cloud" site template from it's [site library](https://generatepress.com/site-library/#site-library). Paid premium update license has been provided by [Netura](https://netura.fi/).
+[![Build Status](https://travis-ci.com/timber/starter-theme.svg?branch=master)](https://travis-ci.com/github/timber/starter-theme)
+[![Packagist Version](https://img.shields.io/packagist/v/upstatement/timber-starter-theme?include_prereleases)](https://packagist.org/packages/upstatement/timber-starter-theme)
 
-For more background on the site technology during big revamp in 2021 refer to blog post and linked with video demo https://jyväskylä.hacklab.fi/2021/12/10/virtuaalinen-yhteisomiitti-2021/.
+The "_s" for Timber: a dead-simple theme that you can build from. The primary purpose of this theme is to provide a file structure rather than a framework for markup or styles. Configure your SASS files, scripts, and task runners however you would like!
 
-![211210-hacklabjkl-generatepress](https://github.com/HacklabJKL/site/assets/2306521/16d896be-25d8-4e45-a61f-5b3e89d19228)
+## Installing the theme
 
+Follow the guide on [how to Install Timber using the Starter Theme](https://timber.github.io/docs/v2/installation/installation/#use-the-starter-theme).
 
-# WP layout technology reconsiderations for 2024
+Then,
 
-This repository is mostly empty because the layout is produced by a wysiwyg "site builder" storing it's configuration to database in traditional "CMS" way of doing HTML easily. This is not very GIT or developer friendly way which is praicing for configuration-as-code methodology and tools like templating engines, ORM's or MVC-architecture that picked up steam in the web only after WordPress was made. 
+1. Rename the theme folder to something that makes sense for your website. You could keep the name `timber-starter-theme` but the point of a starter theme is to make it your own!
+2. Activate the theme in the WordPress Dashboard under **Appearance → Themes**.
+3. Do your thing! And read [the docs](https://timber.github.io/docs/).
 
-A GIT/developer friendly layout framework https://timber.github.io/docs/v2/ is currently being considered, which gives more developer oriented workflow for PHP web development involving WordPress as the backend.
+## The `StarterSite` class
 
+In **functions.php**, we call `new StarterSite();`. The `StarterSite` class sits in the **src** folder. You can update this class to add functionality to your theme. This approach is just one example for how you could do it.
 
-# Issue tracker
-[Issue tracker](https://github.com/HacklabJKL/site/issues) linked to this repository is loosely up to date and does not take into account latest technology reconsiderations and some older tasks may become irrelevant.
+The **src** folder would be the right place to put your classes that [extend Timber’s functionality](https://timber.github.io/docs/v2/guides/extending-timber/).
 
-There is also a old issue tracker online as this repository was made by accident as new during previous WP technology upgrade efforts.
+Small tip: You can make use of Composer’s [autoloading functionality](https://getcomposer.org/doc/04-schema.md#psr-4) to automatically load your PHP classes when they are requested instead of requiring one by one in **functions.php**.
 
-# Development environment
+## What else is there?
 
-Vagrant development environment with [live site sync script](https://github.com/HacklabJKL/VVV/blob/develop/pull-production.sh) and some documentation is provided at https://github.com/HacklabJKL/VVV. 
+- `static/` is where you can keep your static front-end scripts, styles, or images. In other words, your Sass files, JS files, fonts, and SVGs would live here.
+- `views/` contains all of your Twig templates. These pretty much correspond 1 to 1 with the PHP files that respond to the WordPress template hierarchy. At the end of each PHP template, you’ll notice a `Timber::render()` function whose first parameter is the Twig file where that data (or `$context`) will be used. Just an FYI.
+- `tests/` ... basically don’t worry about (or remove) this unless you know what it is and want to.
+
+## Other Resources
+
+* [This branch](https://github.com/laras126/timber-starter-theme/tree/tackle-box) of the starter theme has some more example code with ACF and a slightly different set up.
+* [Twig for Timber Cheatsheet](http://notlaura.com/the-twig-for-timber-cheatsheet/)
+* [Timber and Twig Reignited My Love for WordPress](https://css-tricks.com/timber-and-twig-reignited-my-love-for-wordpress/) on CSS-Tricks
+* [A real live Timber theme](https://github.com/laras126/yuling-theme).
+* [Timber Video Tutorials](http://timber.github.io/timber/#video-tutorials) and [an incomplete set of screencasts](https://www.youtube.com/playlist?list=PLuIlodXmVQ6pkqWyR6mtQ5gQZ6BrnuFx-) for building a Timber theme from scratch.
