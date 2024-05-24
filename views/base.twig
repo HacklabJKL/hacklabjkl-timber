@@ -7,23 +7,34 @@
 {% endblock %}
 
 <body class="{{body_class}}" data-template="base.twig">
-  <main class="container">
+
 		{{ function('wp_body_open') }}
 		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
-		<header class="header" >
-			{% block header %}
-				<div class="wrapper">
-					<h1 class="hdr-logo" role="banner">
-						<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
-					</h1>
-					<nav id="nav-main" class="nav-main" role="navigation">
-						{% include "menu.twig" with {'items': menu.get_items} %}
-					</nav><!-- #nav -->
-				</div>
-			{% endblock %}
+		<header class="container-fluid">
+
+			<div style="max-width:2100px; background-image:url(/wp-content/uploads/2023/11/cropped-IMG_20231111_184014_00_030_2023-11-16_18-56-16_screenshot_grade_100-scaled-1.jpg);">
+
+        <div class="statusbar row">
+          <div class="col-md-6"><a>Emännäntie 10 O, Jyväskylä</a></div>
+          <div class="col-md-6"><a>Kävijäseuranta</a>: Hacklab on nyt täysi</div>
+        </div>
+
+				<nav id="nav-main" class="nav-main" role="navigation">
+          <a href="{{ site.link }}" title="Home">
+            <img src="/wp-content/uploads/2023/11/cropped-logo-smooth-simplified.png"
+              alt="Hacklab Jyväskylä logo" style="width:150px;" />
+          </a>
+					{% include "menu.twig" with {'items': menu.get_items} %}
+				</nav>
+
+        {% block header_extra %}
+        {% endblock %}
+
+			</div>
+
 		</header>
 
-		<section id="content" role="main" class="content-wrapper">
+		<section id="content" role="main" class="container-fluid">
 			{% if title %}<h1>{{title}}</h1>{% endif %}
 			<div class="wrapper">
 				{% block content %}
@@ -43,6 +54,6 @@
 			</footer>
 			{{ function('wp_footer') }}
 		{% endblock %}
-  </main>
+
 	</body>
 </html>
