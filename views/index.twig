@@ -76,5 +76,26 @@
 	      {% endfor %}
       </div class="row">
 	    {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+      <button>Selaa lisää</button>
     </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Tiedotteet</h2>
+          <ul>
+            <li>Tiedote 1</li>
+            <li>Tiedote 2</li>
+            <li>Tiedote 3</li>
+            <li>Tiedote 4</li>
+            <li>Tiedote 5</li>
+          </ul>
+        </div>
+        <div class="col-md-u">
+          <h2>Tapahtumat</h2>
+          <article>TODO Tapahtumalistaus</article>
+        </div>
+      </div>
+    </div>
+
 {% endblock %}
