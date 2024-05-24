@@ -1,6 +1,20 @@
 {% extends "base.twig" %}
 
+{% block header %}
+  <div class="index-hero" style="background-image:url(/wp-content/uploads/2023/11/cropped-IMG_20231111_184014_00_030_2023-11-16_18-56-16_screenshot_grade_100-scaled-1.jpg);">
+	  <div class="wrapper">
+		  <h1 class="hdr-logo" role="banner">
+			  <a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
+		  </h1>
+		  <nav id="nav-main" class="nav-main" role="navigation">
+			  {% include "menu.twig" with {'items': menu.get_items} %}
+		  </nav><!-- #nav -->
+	  </div>
+  </div>
+{% endblock %}
+
 {% block content %}
+
   <div class="row">
 	{% for post in posts %}
     <div class="col-md-6">
