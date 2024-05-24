@@ -21,8 +21,8 @@
 {% endblock %}
 
 {% block content %}
-  <div class="">
-    <div class="row container">
+  <div class="container">
+    <div class="row">
 	    {% for post in posts %}
         <div class="col-md-6">
 		      {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
