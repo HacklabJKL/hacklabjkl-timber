@@ -21,14 +21,37 @@
 {% endblock %}
 
 {% block content %}
+
   <div class="container">
     <div class="row">
-	    {% for post in posts %}
-        <div class="col-md-6">
-		      {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-        </div>
-	    {% endfor %}
-    </div class="row">
-	{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
-  </div>
+      <div class="col-md-4">
+        <h3>Yhteisölliset työtilat</h3>
+        <p>Monipuolinen työtila ja välineet edulliseen jäsenhintaan opiskelija-alennuksin.</p>
+      </div>
+      <div class="col-md-4">
+        <h3>Harrasteseuraa paikallisesti ja verkossa</h3>
+        <p>Monipuolinen työtila ja välineet edulliseen jäsenhintaan opiskelija-alennuksin.</h3><p>Aktiivinen ja avulias chat ryhmä jossa osaajia erilaisilta teknisiltä ja taiteellisilta aloilta.</p>
+      </div>
+      <div class="col-md-4">
+        <h3>Osa Suomen Hacklabien verkostoa</h3>
+        <p>Suomessa on Hacklabeja jo 15 kaupungissa – <a href="hacklab.fi">katso lisää</a>.</p>
+      </div>
+
+      <div class="row">
+        <h1>Mikä Hacklab?</h1>
+        <p>Hacklab Jyväskylä ry on yhdistys, jota kuvaillaan kansainvälisesti nimellä makerspace tai hackerspace. Tällaisten yhdistysten aatteisiin kuuluu tieto- ja kädentaitojen avoin jakaminen ja niiden mahdollistaminen kaikille kiinnostuneille. Yhdistys on esimerkiksi yhdessä Linkki Jyväskylä ry kanssa järjestänyt digitaalisen tekemisen Instanssi -festivaalia, kehittänyt ja käyttänyt runsaasti avoimen lähdekoodin ohjelmistoja, tarjonnut käyttökoulutusta ja apua kaikenlaiseen askarteluun sekä puutöihin ja järjestänyt pieniä seminaareja ohjelmistokehityksen teoreettisista puolista.</p>
+      </div>
+
+    </div>
+
+    <div class="container">
+      <div class="row">
+	      {% for post in posts %}
+          <div class="col-md-6">
+		        {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+          </div>
+	      {% endfor %}
+      </div class="row">
+	    {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+    </div>
 {% endblock %}
