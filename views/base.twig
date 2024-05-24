@@ -6,7 +6,8 @@
 	</head>
 {% endblock %}
 
-	<body class="{{body_class}}" data-template="base.twig">
+<body class="{{body_class}}" data-template="base.twig">
+  <main class="container">
 		{{ function('wp_body_open') }}
 		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
 		<header class="header" >
@@ -42,5 +43,6 @@
 			</footer>
 			{{ function('wp_footer') }}
 		{% endblock %}
+  </main>
 	</body>
 </html>
