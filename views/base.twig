@@ -1,6 +1,6 @@
 {% block html_head_container %}
 
-{% include 'html-header.twig' %}
+  {% include 'html-header.twig' %}
 	{% block head %}
 	{% endblock %}
 	</head>
@@ -8,51 +8,48 @@
 
 <body class="{{body_class}}" data-template="base.twig">
 
-		{{ function('wp_body_open') }}
-		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
-		<header class="container-fluid">
+	{{ function('wp_body_open') }}
+	<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
 
-			<div style="max-width:2100px; background-image:url(/wp-content/uploads/2023/11/cropped-IMG_20231111_184014_00_030_2023-11-16_18-56-16_screenshot_grade_100-scaled-1.jpg);">
+	<header class="container-fluid">
 
-        <div class="container">
-          <div class="statusbar row">
-            <div class="col-md-6"><a>Emännäntie 10 O, Jyväskylä</a></div>
-            <div class="col-md-6"><a>Kävijäseuranta</a>: Hacklab on nyt täysi</div>
-          </div>
+		<div style="max-width:2100px; background-image:url(/wp-content/uploads/2023/11/cropped-IMG_20231111_184014_00_030_2023-11-16_18-56-16_screenshot_grade_100-scaled-1.jpg);">
 
-				  <nav id="nav-main" class="nav-main" role="navigation">
-            <a href="{{ site.link }}" title="Home">
-              <img src="/wp-content/uploads/2023/11/cropped-logo-smooth-simplified.png"
-                alt="Hacklab Jyväskylä logo" style="width:80px;" />
-            </a>
-					  {% include "menu.twig" with {'items': menu.get_items} %}
-				  </nav>
+      <div class="container">
+        {% block nav_before %}{% endblock %}
 
-          {% block header_extra %}
-          {% endblock %}
 
-        </div>
-			</div>
+				<nav id="nav-main" class="nav-main" role="navigation">
+          <a href="{{ site.link }}" title="Home">
+            <img src="/wp-content/uploads/2023/11/cropped-logo-smooth-simplified.png"
+              alt="Hacklab Jyväskylä logo" style="width:80px;" />
+          </a>
+					{% include "menu.twig" with {'items': menu.get_items} %}
+				</nav>
 
-		</header>
+        {% block nav_after %}{% endblock %}
 
-		<section id="content" role="main" class="container-fluid">
-			{% if title %}<h1>{{title}}</h1>{% endif %}
-			<div class="wrapper">
-				{% block content %}
-					Sorry, no content
-				{% endblock %}
-			</div>
-			{% if sidebar %}
-				<aside class="layout-sidebar">
-					{{sidebar}}
-				</aside>
-			{% endif %}
-		</section>
+      </div>
+		</div>
 
-		{% block footer %}
-      {% include 'footer.twig' %}
+	</header>
+
+	<section id="content" role="main">
+		{% if title %}<h1>{{title}}</h1>{% endif %}
+
+    {% block content %}
 		{% endblock %}
 
-	</body>
+		{% if sidebar %}
+			<aside class="layout-sidebar">
+				{{sidebar}}
+			</aside>
+		{% endif %}
+	</section>
+
+	{% block footer %}
+    {% include 'footer.twig' %}
+	{% endblock %}
+
+</body>
 </html>

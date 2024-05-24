@@ -1,7 +1,13 @@
 {% extends "base.twig" %}
 
-{% block header_extra %}
+{% block nav_before %}
+  <div class="statusbar row">
+    <div class="col-md-6"><a>Emännäntie 10 O, Jyväskylä</a></div>
+    <div class="col-md-6"><a>Kävijäseuranta</a>: Hacklab on nyt täysi</div>
+  </div>
+{% endblock %}
 
+{% block nav_after %}
   <div class="row" style="min-height: 80vh; padding-top:20em;">
 
     <div class="col-md-6">
@@ -17,7 +23,6 @@
     </div>
 
   </div>
-
 {% endblock %}
 
 {% block content %}
