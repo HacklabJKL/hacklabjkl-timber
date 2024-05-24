@@ -1,24 +1,24 @@
 {% extends "base.twig" %}
 
 {% block nav_before %}
-  <div class="statusbar row">
+  <div class="statusbar row" style="padding-top: 1em; padding-bottom: 1em;">
     <div class="col-md-6"><a>Emännäntie 10 O, Jyväskylä</a></div>
     <div class="col-md-6"><a>Kävijäseuranta</a>: Hacklab on nyt täysi</div>
   </div>
 {% endblock %}
 
 {% block nav_after %}
-  <div class="row" style="min-height: 50em; padding-top:34em;">
+  <div class="row" style="min-height: 50em; padding-top:33em;">
 
     <div class="col-md-6">
-      <div style="background: rgba(0, 0, 0, 0.2);">
-        <h1 class="hdr-logo" role="banner">
-		    {{site.name}}
-	    </h1>
-      <h2>Tekevän ihmisen olohuone - Makers living room</h2>
-      <button class="contrast">VR Tour</button>
-      <button>Vierailijan info</button>
-      <button>Visitor info</button>
+      <div style="background: rgba(0, 0, 0, 0.2); padding: 0 0 1em 1em;">
+        <h1 style="padding-top: 0.5em;" class="hdr-logo" role="banner">
+		      {{site.name}}
+	      </h1>
+        <h2>Tekevän ihmisen olohuone - Makers living room</h2>
+        <button class="contrast">VR Tour</button>
+        <button>Vierailijan info</button>
+        <button>Visitor info</button>
       </div>
     </div>
 
