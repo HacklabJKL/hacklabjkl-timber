@@ -14,21 +14,24 @@
 
 			<div style="max-width:2100px; background-image:url(/wp-content/uploads/2023/11/cropped-IMG_20231111_184014_00_030_2023-11-16_18-56-16_screenshot_grade_100-scaled-1.jpg);">
 
-        <div class="statusbar row">
-          <div class="col-md-6"><a>Emännäntie 10 O, Jyväskylä</a></div>
-          <div class="col-md-6"><a>Kävijäseuranta</a>: Hacklab on nyt täysi</div>
+        <div class="container">
+          <div class="statusbar row">
+            <div class="col-md-6"><a>Emännäntie 10 O, Jyväskylä</a></div>
+            <div class="col-md-6"><a>Kävijäseuranta</a>: Hacklab on nyt täysi</div>
+          </div>
+
+				  <nav id="nav-main" class="nav-main" role="navigation">
+            <a href="{{ site.link }}" title="Home">
+              <img src="/wp-content/uploads/2023/11/cropped-logo-smooth-simplified.png"
+                alt="Hacklab Jyväskylä logo" style="width:80px;" />
+            </a>
+					  {% include "menu.twig" with {'items': menu.get_items} %}
+				  </nav>
+
+          {% block header_extra %}
+          {% endblock %}
+
         </div>
-
-				<nav id="nav-main" class="nav-main" role="navigation">
-          <a href="{{ site.link }}" title="Home">
-            <img src="/wp-content/uploads/2023/11/cropped-logo-smooth-simplified.png"
-              alt="Hacklab Jyväskylä logo" style="width:150px;" />
-          </a>
-					{% include "menu.twig" with {'items': menu.get_items} %}
-				</nav>
-
-        {% block header_extra %}
-        {% endblock %}
 
 			</div>
 
