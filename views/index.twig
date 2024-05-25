@@ -119,11 +119,9 @@
     <div class="row">
       <div class="col-lg">
         <ul>
-          <li>Tiedote 1</li>
-          <li>Tiedote 2</li>
-          <li>Tiedote 3</li>
-          <li>Tiedote 4</li>
-          <li>Tiedote 5</li>
+          {% for post in news %}
+            <li>{{post.date}} <a href="{{post.link}}">{{post.title}}</a></li>
+	        {% endfor %}
         </ul>
       </div>
       <div class="col-lg">
