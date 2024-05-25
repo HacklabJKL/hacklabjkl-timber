@@ -1,9 +1,15 @@
 {% extends "base.twig" %}
 
 {% block nav_before %} <!-- Index page "status bar" -->
-  <div id="statusbar" class="row" style="padding-top: 1em; padding-bottom: 1em; color: white;">
-    <div class="col-md"><a style="color: lightgray">Emännäntie 10 O, Jyväskylä</a></div>
-    <div class="col-md"><a style="color: lightgray">Kävijäseuranta</a>: Hacklab on nyt täysi</div>
+  <div id="statusbar" class="row between-sm" style="padding-top: 1em; padding-bottom: 1em; color: white;">
+    <div class="col-xs-12 col-sm-5">
+      <a href="https://www.openstreetmap.org/?mlat=62.25002&mlon=25.70675#map=18/62.25002/25.70675"
+        style="color: lightgray" target="_blank">Emännäntie 10 O, Jyväskylä</a>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-4">
+      <a href="https://zouppen.iki.fi/visitorwidget/"
+        style="color: lightgray" target="_blank">Kävijäseuranta</a>: TODO add status here
+    </div>
   </div>
 {% endblock %}
 
