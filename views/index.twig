@@ -63,7 +63,7 @@
     </div>
   </div>
 
-  <div class="">
+  <section>
     <h2>Labin välineistöä</h2>
     <div class="row">
       <div class="col-md-6 col-lg-3">
@@ -76,24 +76,24 @@
         <article>
           <h3>Puitteet rentoon ajanviettoon</h3>
           <p>Keittiö, sauna, videotykki, sohvanurkkaus, kokoelma pelikonsoleita ja pelejä.</p>
-      </div>
         </article>
-        <div class="col-md-6 col-lg-3">
-          <article>
-            <h3>Virtuaalitodellisuus</h3>
-            <p>Tutustu virtuaalitodellisuuden immersiiviseen maailmaan HTC Vivellä ja kattavalla pelivalikoimalla hiljattain valmistuneessa VR-huoneessa.</p>
-          </article>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <article>
-            <h3>Radioamatööritoiminta</h3>
-            <p>T2FD-antenni ja radioasema radioamatööritoimintaan HF-taajuuksilla. Lisäksi antennit 2m ja 70cm taajuuksille. Radio­asema­tunnus OH6DDR.</p>
-        </div>
-          </article>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <article>
+          <h3>Virtuaalitodellisuus</h3>
+          <p>Tutustu virtuaalitodellisuuden immersiiviseen maailmaan HTC Vivellä ja kattavalla pelivalikoimalla hiljattain valmistuneessa VR-huoneessa.</p>
+        </article>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <article>
+          <h3>Radioamatööritoiminta</h3>
+          <p>T2FD-antenni ja radioasema radioamatööritoimintaan HF-taajuuksilla. Lisäksi antennit 2m ja 70cm taajuuksille. Radio­asema­tunnus OH6DDR.</p>
+        </article>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="">
+  <section>
     <h2>Viimeisimmät artikkelit blogissa</h2>
     <div class="row">
 	    {% for post in posts %}
@@ -104,12 +104,12 @@
     </div class="row">
 	  {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
     <button>Selaa lisää</button>
-  </div>
+  </section>
 
-  <div class="">
+  <section>
+    <h2>Tiedotteet ja tapahtumakalenteri</h2>
     <div class="row">
-      <div class="col-md-6">
-        <h2>Tiedotteet</h2>
+      <div class="col-lg-6">
         <ul>
           <li>Tiedote 1</li>
           <li>Tiedote 2</li>
@@ -118,11 +118,12 @@
           <li>Tiedote 5</li>
         </ul>
       </div>
-      <div class="col-md-u">
-        <h2>Tapahtumat</h2>
-        <article>TODO Tapahtumalistaus</article>
+      <div class="col-lg-6">
+        <article>
+          {% apply shortcodes %} [calendar id="283"] {% endapply %}
+        </article>
       </div>
     </div>
-  </div>
+  </section>
 
 {% endblock %}
