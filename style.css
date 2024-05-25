@@ -6,18 +6,18 @@
 
 /* Footer */
 
-#footer h3 {
+footer h3 {
   color: lightgray;
 }
 
-#footer h4 {
+footer h4 {
   color: lightgray;
 }
 
-#footer a {
+footer a {
   color: white;
 }
 
-#footer p {
+footer p {
   color: lightgray;
 }

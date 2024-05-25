@@ -1,19 +1,17 @@
 {% include 'html-header.twig' %}
 
 <body class="{{body_class}}" data-template="base.twig">
-
 	{{ function('wp_body_open') }}
 	<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
 
 	<header style="padding-block: 0;">
-
-		<div style="background-image:url(/wp-content/uploads/2023/11/IMG_20231111_184014_00_030_2023-11-16_18-56-16_screenshot_grade_100-scaled.jpg); background-position: top center; background-size: cover; max-width: 2250px; margin: auto auto;"
-      class="container-fluid">
+		<div style="background-image:url(/wp-content/uploads/2023/11/IMG_20231111_184014_00_030_2023-11-16_18-56-16_screenshot_grade_100-scaled.jpg);
+      background-position: top center; background-size: cover; max-width: 2250px; margin: auto auto;">
 
       <div class="container">
         {% block nav_before %}{% endblock %}
 
-				<nav id="nav-main" class="nav-main" role="navigation">
+				<nav id="nav-main" role="navigation">
           <a href="{{ site.link }}" title="Home">
             <img src="/wp-content/uploads/2023/11/cropped-logo-smooth-simplified.png"
               alt="Hacklab Jyväskylä logo" style="width: 80px;" />
@@ -22,13 +20,12 @@
 				</nav>
 
         {% block nav_after %}{% endblock %}
-
       </div>
-		</div>
 
+		</div>
 	</header>
 
-	<section id="content" role="main">
+	<main id="content" role="main">
 		{% if title %}<h1>{{title}}</h1>{% endif %}
 
     <div class="container">
@@ -41,11 +38,16 @@
 				{{sidebar}}
 			</aside>
 		{% endif %}
-	</section>
+	</main>
 
-	{% block footer %}
-    {% include 'footer.twig' %}
-	{% endblock %}
+  <footer>
+    <div style="background-image:url(/wp-content/uploads/2019/07/Screenshot_20190705_184206.png);
+      background-position: center center; background-size: 100%; min-height: 800px;">
+
+      {% include 'footer.twig' %}
+
+    </div>
+  </footer>
 
 </body>
 </html>

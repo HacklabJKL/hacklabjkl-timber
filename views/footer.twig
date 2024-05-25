@@ -1,40 +1,34 @@
-<div style="background-image:url(/wp-content/uploads/2019/07/Screenshot_20190705_184206.png);
-  background-position: center center; background-size: 100%; min-height: 800px;">
+<div class="container" style="background-color: rgba(0, 0, 0, 0.5);">
 
-  <footer id="footer">
-    <div class="container" style="background-color: rgba(0, 0, 0, 0.5);">
-
-      <div class="row" style="padding-top: 8em; color: white;">
-        <div class="col-md-6">
-          <h3>Tule tutustumaan toimintaamme kerhoilloissa tiistaisin ja lauantaisin ja liity <a href="/kerhotila/ryhmakeskustelu/">Telegram/Matrix kanavallemme</a>.</h3>
-        </div>
-        <div class="col-md-6">
-          <button>Tutustu toimintaan</button>
-        </div>
-      </div>
-
-      <div class="row" style="margin-top: 8em">
-        <div class="col-md-3">
-          <a href="{{ site.link }}" title="Home">
-            <img src="/wp-content/uploads/2023/11/cropped-logo-smooth-simplified.png"
-              alt="Hacklab Jyväskylä logo" style="width:200px;" />
-          </a>
-        </div>
-        <div class="col-md-3">
-          <p>Hacklab Jyväskylä ry</p>
-          <p>Emännäntie 10 O (alakerta)</p>
-          <p><a href="/kerhotila/">Avaa saapumisohje</a></p>
-        </div>
-        <div class="col-md-3"><p>P. 0931576906</p></div>
-        <div class="col-md-3">
-          <h4>Sponsorit</h4>
-          <a href="https://jyy.fi/" target="_blank">
-            <img src="/wp-content/uploads/2017/09/jyylogo-w-150x150.png" alt="Jyväskylän yliopiston ylioppilaskunnan logo"></a>
-        </div>
-      </div>
-
-      <p>Copyright {{"now"|date('Y')}}</p>
-      {{ function('wp_footer') }}
+  <div class="row" style="padding-top: 8em; color: white;">
+    <div class="col-md-6">
+      <h3>Tule tutustumaan toimintaamme kerhoilloissa tiistaisin ja lauantaisin ja liity <a href="/kerhotila/ryhmakeskustelu/">Telegram/Matrix kanavallemme</a>.</h3>
     </div>
-  </footer>
+    <div class="col-md-6">
+      <button>Tutustu toimintaan</button>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 8em">
+    <div class="col-md-3">
+      <a href="{{ site.link }}" title="Home">
+        <img src="/wp-content/uploads/2023/11/cropped-logo-smooth-simplified.png"
+          alt="Hacklab Jyväskylä logo" style="width:200px;" />
+      </a>
+    </div>
+    <div class="col-md-3">
+      <p>Hacklab Jyväskylä ry</p>
+      <p>Emännäntie 10 O (alakerta)</p>
+      <p><a href="/kerhotila/">Avaa saapumisohje</a></p>
+    </div>
+    <div class="col-md-3"><p>P. 0931576906</p></div>
+    <div class="col-md-3">
+      <h4>Sponsorit</h4>
+      <a href="https://jyy.fi/" target="_blank">
+        <img src="/wp-content/uploads/2017/09/jyylogo-w-150x150.png" alt="Jyväskylän yliopiston ylioppilaskunnan logo"></a>
+    </div>
+  </div>
+
+  <p>Copyright {{"now"|date('Y')}}</p>
+  {{ function('wp_footer') }}
 </div>
