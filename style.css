@@ -3,3 +3,21 @@
  * Description: Starter Theme to use with Timber
  * Author: Upstatement and YOU!
 */
+
+/* Footer */
+
+#footer h3 {
+  color: lightgray;
+}
+
+#footer h4 {
+  color: lightgray;
+}
+
+#footer a {
+  color: white;
+}
+
+#footer p {
+  color: lightgray;
+}
