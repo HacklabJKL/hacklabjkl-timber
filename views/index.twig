@@ -105,13 +105,20 @@
     <h2>Viimeisimmät artikkelit blogissa</h2>
     <div class="row">
 	    {% for post in posts %}
-        <div class="col-md-6">
-		      {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+        <div class="col-md-3 col-xs-6">
+		      <h2 class="h2"><a href="{{post.link}}">{{ post.title }}</a></h2>
+	        <!-- <p>{{ post.excerpt({ words:20, read_more: "Read more..." }) }}</p> -->
+	        {% if post.thumbnail.src %}
+		        <img src="{{ post.thumbnail.src | letterbox(300, 300) }}" />
+	        {% endif %}
         </div>
 	    {% endfor %}
     </div class="row">
-	  {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
-    <button>Selaa lisää</button>
+    <div class="row center-xs">
+      <div class="col-xs-6">
+        <button style="margin-top:1em;"><a href="/blogi">Selaa lisää</a></button>
+      </div>
+    </div>
   </section>
 
   <section>

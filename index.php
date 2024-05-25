@@ -15,20 +15,25 @@
 
 $context          = Timber::context();
 
-$news_query_args = [
+$context['news'] = Timber::get_posts([
+	'post_type'	=> 'post',
+	'category_name' => 'tiedote',
+	'posts_per_page' => 20,
+]);
+
+$context['posts'] = Timber::get_posts([
 	'post_type'	=> 'post',
 	'category_name' => 'projekti,kerhoilta,tapahtuma,yhdistys',
-];
-$context['news'] = Timber::get_posts($news_query_args);
+	'posts_per_page' => 8,
+	// filter posts that have a thumbnail
+	'meta_query' => [[
+		'key' => '_thumbnail_id',
+		'value' => '',
+		'compare' => '!=',
+	]]
+]);
 
-$posts_query_args = [
-	'post_type'	=> 'post',
-	'category_name' => 'projekti,kerhoilta,tapahtuma,yhdistys',
-];
-$context['posts'] = Timber::get_posts($posts_query_args);
-
-
-$templates        = array( 'index.twig' );
+$templates = array( 'index.twig' );
 
 // WP template hierarchy boilerplate code
 if ( is_home() ) {
