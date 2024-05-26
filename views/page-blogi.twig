@@ -13,6 +13,7 @@
 	        {% if post.thumbnail.src %}
 		        <img src="{{ post.thumbnail.src | letterbox(300, 300) }}" />
 	        {% endif %}
+          <!-- <p>{{ post.excerpt({ words:20, read_more: "Read more..." }) }}</p> -->
         </div>
 	    {% endfor %}
     </div class="row">
