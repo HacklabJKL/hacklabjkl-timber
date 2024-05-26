@@ -21,3 +21,21 @@ footer a {
 footer p {
   color: lightgray;
 }
+
+/* Separate desktop and mobile menu */
+@media only screen and (max-width: 600px) {
+  #nav-main {
+    display:none;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  #nav-main {
+
+  }
+}
+
+a.mobile-menulink {
+  font-size: 1.2em;
+  color: white;
+}

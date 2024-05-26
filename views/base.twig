@@ -23,6 +23,26 @@
 					{% include "menu.twig" with {'items': menu.get_items} %}
 				</nav>
 
+        <!-- Mobile menu activated based on mediaquery in style.css -->
+        <nav id="nav-mobile" role="navigation">
+          <a href="{{ site.link }}" title="Home">
+            <img src="/wp-content/uploads/2023/11/cropped-logo-smooth-simplified.png"
+              alt="Hacklab Jyväskylä logo" style="width: 60px;" />
+          </a>
+          <details id="nav-mobile-btn" class="dropdown" style="margin-top:0.2em;">
+            <summary style="font-size: 1.1em; height: 2.2em;">
+              Menu
+            </summary>
+            <ul dir="rtl">
+              <aside>
+                <nav>
+                  {% include "menu-mobile.twig" with {'items': menu.get_items} %}
+                </nav>
+              </aside>
+            </ul>
+          </details>
+				</nav>
+
         {% block nav_after %}{% endblock %}
       </div>
 

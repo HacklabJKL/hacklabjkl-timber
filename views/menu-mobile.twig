@@ -1,0 +1,38 @@
+<!-- NOTE
+   - PicoCSS does not support hover dropdowns used in previous theme
+     (https://github.com/picocss/pico/issues/358)
+   - Supports only 2 levels, add more only if absolutely necessary -->
+{% if menu %}
+
+	<ul style="background: rgba(0, 0, 0, 0.2);">
+
+	  {% for item in items %}
+
+      {% if item.children %}
+        -
+        <li class="{{ item.classes | join(' ') }}">
+			    <a target="{{ item.target }}" href="{{ item.link }}" class="mobile-menulink"><strong>{{ item.title }}</a></strong></a>
+		    </li>
+
+
+        {% for child in item.children %}
+		      <li class="{{ item.classes | join(' ') }}">
+			      <a target="{{ child.target }}" href="{{ child.link }}" class="mobile-menulink">{{ child.title }}</a>
+		      </li>
+	      {% endfor %}
+        <br>
+
+      {% else %}
+
+        <li class="{{ item.classes | join(' ') }}">
+			    <a target="{{ item.target }}" href="{{ item.link }}" class="mobile-menulink""><strong>{{ item.title }}</strong></a>
+		    </li>
+
+      {% endif %}
+
+	  {% endfor %}
+	</ul>
+
+{% else %}
+  <p>Error in menu.twig: Can't load menu here because one is not set.</p>
+{% endif %}
