@@ -107,11 +107,12 @@
     <div class="row">
 	    {% for post in posts %}
         <div class="col-md-3 col-xs-6">
-		      <h2 class="h2"><a href="{{post.link}}">{{ post.title }}</a></h2>
+		      <h4 style="min-height: 3.5em;"><a href="{{post.link}}">{{ post.title }}</a></h4>
 	        <!-- <p>{{ post.excerpt({ words:20, read_more: "Read more..." }) }}</p> -->
 	        {% if post.thumbnail.src %}
 		        <a href="{{post.link}}"><img src="{{ post.thumbnail.src('large') }}" style="width:300px; height:200px; object-fit:cover;" /></a>
 	        {% endif %}
+          <p style="margin-bottom:1em;"><strong>{{ post.date }}</strong> {{ post.author }}</p>
         </div>
 	    {% endfor %}
     </div class="row">
