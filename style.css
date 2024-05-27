@@ -33,6 +33,11 @@ footer p {
   #nav-mobile {
     display:none;
   }
+
+  /* Disable submenu dropdown button focus shadow  */
+  nav details.dropdown summary:not([role]):focus {
+    box-shadow: 0 0 0 0;
+  }
 }
 
 a.mobile-menulink {

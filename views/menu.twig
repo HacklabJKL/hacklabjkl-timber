@@ -14,12 +14,13 @@
 			    <a target="{{ item.target }}" href="{{ item.link }}" style="color: white;">{{ item.title }}</a>
 		    </li>
 
-        <details class="dropdown">
-          <summary></summary>
+        <!-- TODO check screen reader compatibility -->
+        <details class="dropdown" style="margin-right: 0.5em; margin-left: 0; width: 1.5em;">
+          <summary style="background-color:rgb(0,0,0,0); border:none;"></summary>
           <ul dir="rtl">
             {% for child in item.children %}
 		          <li class="{{ item.classes | join(' ') }}">
-			          <a target="{{ child.target }}" href="{{ child.link }}" style="color: white;">{{ child.title }}</a>
+			          <a target="{{ child.target }}" href="{{ child.link }}">{{ child.title }}</a>
 		          </li>
 	          {% endfor %}
           </ul>
