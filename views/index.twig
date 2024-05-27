@@ -101,20 +101,14 @@
 
   <section>
     <h2>Viimeisimmät artikkelit blogissa</h2>
-      <article>
-    <div class="row">
-	    {% for post in posts %}
-        <div class="col-md-6">
-          {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+    <article>
+      {{ include('partial/postlist-2col.twig') }}
+      <div class="row center-xs">
+        <div class="col-xs-6">
+          <button href="/blogi" style="margin-top:1em; margin-bottom:1em;">Selaa lisää</button>
         </div>
-	    {% endfor %}
-    </div class="row">
-    <div class="row center-xs">
-      <div class="col-xs-6">
-        <button href="/blogi" style="margin-top:1em; margin-bottom:1em;">Selaa lisää</button>
       </div>
-    </div>
-      </article>
+    </article>
   </section>
 
   <section>

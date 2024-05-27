@@ -13,9 +13,7 @@
 
     {% if posts is not empty %}
 
-      {% for post in posts %}
-        {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-      {% endfor %}
+      {{ include('partial/postlist-2col.twig') }}
 
     {% else %}
       <h5>No results.</h5>
