@@ -36,6 +36,7 @@ $context['posts'] = Timber::get_posts([
 $templates = array( 'index.twig' );
 
 // WP template hierarchy boilerplate code
+// https://timber.github.io/docs/v2/guides/twig/#template-arrays
 if ( is_home() ) {
 	array_unshift( $templates, 'front-page.twig', 'home.twig' );
 }
