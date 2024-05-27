@@ -1,8 +1,13 @@
 /*
- * Theme Name: HacklabJkl Timber 2.x Starter Theme
- * Description: Starter Theme to use with Timber
- * Author: Upstatement and YOU!
-*/
+ * Theme Name: HacklabJkl Timber 2.x Theme
+ * Description: Timber Starter Theme + PicoCSS + Flexboxgrid
+ * Author: jasalt
+ */
+
+
+/*
+ * Navigation menu tweaks
+ */
 
 /* Separate desktop and mobile menu */
 @media only screen and (max-width: 768px) {
@@ -10,24 +15,28 @@
     display:none;
   }
 }
-
 @media only screen and (min-width: 769px) {
   #nav-mobile {
     display:none;
   }
-
-  /* Disable submenu dropdown button focus shadow  */
+}
+/* Disable submenu dropdown button focus shadow  */
   nav details.dropdown summary:not([role]):focus {
     box-shadow: 0 0 0 0;
   }
-}
-
+/* Bigger mobile font and static color */
 a.mobile-menulink {
   font-size: 1.2em;
   color: white;
 }
 
-/* Index page calendar plugin color overrides */
+
+/*
+ * Style compatibility hacks for plugins etc
+ */
+
+
+/* Index page calendar plugin compatibility */
 .simcal-tooltip-content > p {
   color: #1f3014;
   font-size: 1.4em;
@@ -38,4 +47,10 @@ a.mobile-menulink {
 }
 .simcal-event-description > p {
   color: rgb(55, 60, 68);
+}
+
+
+/* Knowledgebase / wiki style compatibility */
+.wzkb h3 a {
+  color: var(--pico-h3-color) !important;
 }
