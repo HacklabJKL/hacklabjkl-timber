@@ -18,7 +18,7 @@ $context          = Timber::context();
 $context['news'] = Timber::get_posts([
 	'post_type'	=> 'post',
 	'category_name' => 'tiedote',
-	'posts_per_page' => 20,
+	'posts_per_page' => 5,
 ]);
 
 $context['posts'] = Timber::get_posts([
