@@ -1,9 +1,29 @@
 {% extends "tease.twig" %}
 
 {% block content %}
-	<h2 class="h2"><a href="{{post.link}}">{{ post.title }}</a></h2>
-	<p>{{ post.excerpt({ words:20, read_more: "Read more..." }) }}</p>
-	{% if post.thumbnail.src %}
-		<img src="{{ post.thumbnail.src | letterbox(300, 300) }}" />
-		{% endif %}
+
+	<h2 class="h2" style="margin-top:0"><a href="{{post.link}}">{{ post.title }}</a></h2>
+  <div class="row">
+
+    <div class="col-xs">
+      <p>{{ post.excerpt({ words:20, read_more: "Lue lisää..." }) }}</p>
+      <p style="margin-bottom:0"><strong>{{ post.date }}</strong> {{ post.author }}
+
+        <!-- TODO issue with archive pages -->
+        {#% for term in post.terms({ taxonomy: 'category' }) %#}
+        <!-- <a href="{{ term.link }}">{{ term.title }}</a> -->
+        {#% endfor %#}
+
+      </p>
+
+    </div>
+	  {% if post.thumbnail.src %}
+	    <div class="col-xs-4">
+		    <img src="{{ post.thumbnail.src('medium') }}" style="width:200px; height: 150px; object-fit: cover;" />
+      </div>
+	  {% endif %}
+
+  </div>
+
+
 {% endblock %}
