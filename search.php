@@ -11,8 +11,17 @@
 
 $templates = array( 'search.twig', 'archive.twig', 'index.twig' );
 
+$query = get_search_query();
+
 $context          = Timber::context();
-$context['title'] = 'Search results for ' . get_search_query();
-$context['posts'] = Timber::get_posts();
+$context['title'] = 'Haku / Search (beta)';
+
+// Check if query is empty
+if ($query) {
+	$context['posts'] = Timber::get_posts();
+	$context['query'] = $query;
+} else {
+	$context['posts'] = [];
+}
 
 Timber::render( $templates, $context );

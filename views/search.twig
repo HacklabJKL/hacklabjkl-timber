@@ -2,12 +2,27 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  {# see `base.twig:27` for where this block's content will be inserted #}
-  <div class="content-wrapper">
-    {% for post in posts %}
-      {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-    {% endfor %}
 
-    {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
-  </div>
+  <form method="get" action="/">
+    <input type="text" name="s" placeholder="Search..." value="{{query}}">
+    <button type="submit"><span class="sr-only">Submit</span></button>
+  </form>
+
+  {% if query %}
+    <p>Searching for <strong>"{{query}}"</strong> from pages, blog and wiki.</p>
+
+    {% if posts is not empty %}
+
+      {% for post in posts %}
+        {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+      {% endfor %}
+
+    {% else %}
+      <h5>No results.</h5>
+    {% endif %}
+
+  {% endif %}
+
+  {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+
 {% endblock %}
