@@ -1,0 +1,61 @@
+<div id="kavseuranta-navbar" style="font-size: 15px;">
+  <span class="gb-icon" id="kavseuranta-icon"><svg viewBox="0 0 16 16" class="bi bi-door-open" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+    <svg>
+      <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"></path>
+      <path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z"></path>
+    </svg>
+  </span>
+  <a href="https://zouppen.iki.fi/visitorwidget/">Kävijäseuranta:</a>
+  <span id="kavseuranta-status">Ladataan...</span>
+</div>
+<script>
+  var kavseurantaUrl = "https://visitors.jkl.hacklab.fi/api/v1/visitors?format=json-v2";
+
+  function kavseurantaUpdate(){
+    jQuery.getJSON(kavseurantaUrl, function(data){
+
+      // Update status text
+      if (data.open){
+        console.log("Ovet ovat avoinna, tervetuloa");
+        jQuery('#kavseuranta-status').text("Ovet ovat avoinna, tervetuloa!");
+        jQuery('#kavseuranta-icon').css("color", "var(--accent)");
+      } else if (data.empty){
+        console.log("Hacklab on nyt tyhjä");
+        jQuery('#kavseuranta-status').text("Hacklab on nyt tyhjä.");
+        jQuery('#kavseuranta-visitors').hide();
+        jQuery('#kavseuranta-icon').css("color", "red");
+      } else {
+        console.log("Hacklabilla ollaan paikalla");
+        jQuery('#kavseuranta-status').text("Hacklabilla ollaan paikalla.");
+        jQuery('#kavseuranta-icon').css("color", "var(--accent)");
+      }
+
+      var visitors = "";
+      if ( data.present.length ){  // if array not empty
+        data.present.forEach(element => {
+          visitors += element.nick;
+          visitors += ", ";
+        });
+
+        // Ugly way to remove ending comma
+        visitors = visitors.substring(0, visitors.length - 2);
+        visitors += ".";
+
+        jQuery('#kavseuranta-visitors').text("Wifiin kirjautuneena " + visitors) ;
+        jQuery('#kavseuranta-visitors').show();
+      }
+      jQuery("#kavseurantaUpdateBtn").show();
+    });
+  }
+
+  jQuery(document).ready(function($) {
+    kavseurantaUpdate();
+    jQuery('#kavseurantaUpdateBtn').click( function(e){
+      e.preventDefault();  // don't act like a link does
+      jQuery("#kavseurantaUpdateBtn").hide();  // hide/show just for some UI feedback
+      kavseurantaUpdate();
+    });
+    window.setInterval(kavseurantaUpdate, 60000);  // auto update
+  })
+
+</script>
