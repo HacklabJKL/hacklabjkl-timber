@@ -6,7 +6,6 @@
   <section>
     <h1>Blogi</h1>
     {{ include('partial/postlist-2col.twig') }}
-
     TODO pagination not working
 	  {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
   </section>
