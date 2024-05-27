@@ -39,3 +39,16 @@ a.mobile-menulink {
   font-size: 1.2em;
   color: white;
 }
+
+/* Index page calendar plugin color overrides */
+.simcal-tooltip-content > p {
+  color: #1f3014;
+  font-size: 1.4em;
+}
+.simcal-tooltip-content > p > a {
+  color: rgb(55, 60, 68);
+  font-size: 1.4em;
+}
+.simcal-event-description > p {
+  color: rgb(55, 60, 68);
+}
