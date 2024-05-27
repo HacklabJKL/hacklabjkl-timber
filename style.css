@@ -23,13 +23,13 @@ footer p {
 }
 
 /* Separate desktop and mobile menu */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   #nav-main {
     display:none;
   }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 769px) {
   #nav-mobile {
     display:none;
   }
