@@ -4,24 +4,6 @@
  * Author: Upstatement and YOU!
 */
 
-/* Footer */
-
-footer h3 {
-  color: lightgray;
-}
-
-footer h4 {
-  color: lightgray;
-}
-
-footer a {
-  color: white;
-}
-
-footer p {
-  color: lightgray;
-}
-
 /* Separate desktop and mobile menu */
 @media only screen and (max-width: 768px) {
   #nav-main {
