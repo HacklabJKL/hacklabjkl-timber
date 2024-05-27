@@ -24,7 +24,7 @@ $context['news'] = Timber::get_posts([
 $context['posts'] = Timber::get_posts([
 	'post_type'	=> 'post',
 	'category_name' => 'projekti,kerhoilta,tapahtuma,yhdistys',
-	'posts_per_page' => 8,
+	'posts_per_page' => 6,
 	// filter posts that have a thumbnail
 	'meta_query' => [[
 		'key' => '_thumbnail_id',
