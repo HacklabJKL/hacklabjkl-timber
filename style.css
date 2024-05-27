@@ -30,8 +30,8 @@ footer p {
 }
 
 @media only screen and (min-width: 601px) {
-  #nav-main {
-
+  #nav-mobile {
+    display:none;
   }
 }
 
