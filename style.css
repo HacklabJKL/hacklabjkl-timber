@@ -80,6 +80,9 @@ footer a:hover {
 .simcal-event-description > p {
   color: var(--jkl-brand-color-dark);
 }
+.simcal-events-dots > b {
+  color: var(--pico-color) !important;
+}
 
 
 /* Knowledgebase / wiki style compatibility */
