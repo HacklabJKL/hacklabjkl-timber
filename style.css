@@ -44,15 +44,19 @@ a.mobile-menulink {
 
 
 /*
- * Footer
+ * Footer overrides for using same colors for both light and dark theme variants.
+ * a::selection color not overridden but could be also
  */
-
-/* TODO fix footer with light theme */
-
-/* footer h3 { */
-/*   color: rgb(145, 194, 112); */
-/* } */
-
+footer h1, footer h2, footer h3, footer h4, footer p {
+  color: #f0f1f3; /* Light variant of --pico-h1-color */
+}
+footer a {
+  color: var(--jkl-brand-color-primary);
+  text-decoration-color: var(--jkl-brand-color-primary)
+}
+footer a:hover {
+  text-decoration-color: #f0f1f3;
+}
 
 /*
  * Style compatibility hacks for plugins etc
