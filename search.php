@@ -14,7 +14,7 @@ $templates = array( 'search.twig', 'archive.twig', 'index.twig' );
 $query = get_search_query();
 
 $context          = Timber::context();
-$context['title'] = 'Haku / Search (beta)';
+$context['title'] = 'Haku / Search';
 
 // Check if query is empty
 if ($query) {
