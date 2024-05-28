@@ -20,6 +20,12 @@
 /*
  * Navigation menu tweaks, mostly hacky workarounds to pico.css defaults
  */
+svg.search-icon {
+  color: var(--jkl-brand-color-primary);
+}
+svg.search-icon:hover {
+  color: var(--jkl-brand-color-light);
+}
 
 /* Separate desktop and mobile menu */
 @media only screen and (max-width: 768px) {
