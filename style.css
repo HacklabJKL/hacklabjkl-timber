@@ -89,3 +89,7 @@ footer a:hover {
 .wzkb h3 a {
   color: var(--pico-h3-color) !important;
 }
+/* HACK hide (broken) czkb plugin search input from wiki pages */
+input.wzkb-search-field {
+  display: none;
+}
